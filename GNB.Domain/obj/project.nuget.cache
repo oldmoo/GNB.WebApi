@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kt1X2+7zkSXNc+TZFpCYr3wT4I2vH7tCuy1LUyLHPKmza6hderr/Co1O4eynWUXse8HkjKlt22n6eJ4V1kbZ/Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Pape\\RiderProjects\\GloiathNationalBank.WebApi\\GNB.Domain\\GNB.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pape\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

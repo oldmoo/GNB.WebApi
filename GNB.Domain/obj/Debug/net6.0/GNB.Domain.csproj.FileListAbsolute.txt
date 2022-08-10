@@ -1,0 +1,15 @@
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\bin\Debug\net6.0\GNB.Domain.deps.json
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\bin\Debug\net6.0\GNB.Domain.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\bin\Debug\net6.0\GNB.Domain.pdb
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\GNB.Domain.csproj.AssemblyReference.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\GNB.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\GNB.Domain.AssemblyInfoInputs.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\GNB.Domain.AssemblyInfo.cs
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\GNB.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\GNB.Domain.csproj.CopyComplete
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\GNB.Domain.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\refint\GNB.Domain.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\GNB.Domain.pdb
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Domain\obj\Debug\net6.0\ref\GNB.Domain.dll

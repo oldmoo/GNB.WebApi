@@ -1,0 +1,17 @@
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\bin\Debug\net6.0\GNB.Application.deps.json
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\bin\Debug\net6.0\GNB.Application.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\bin\Debug\net6.0\GNB.Application.pdb
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\bin\Debug\net6.0\GNB.DataAccess.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\bin\Debug\net6.0\GNB.Domain.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\bin\Debug\net6.0\GNB.DataAccess.pdb
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\bin\Debug\net6.0\GNB.Domain.pdb
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\GNB.Application.csproj.AssemblyReference.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\GNB.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\GNB.Application.AssemblyInfoInputs.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\GNB.Application.AssemblyInfo.cs
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\GNB.Application.csproj.CoreCompileInputs.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\GNB.Application.csproj.CopyComplete
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\GNB.Application.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\refint\GNB.Application.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\GNB.Application.pdb
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Application\obj\Debug\net6.0\ref\GNB.Application.dll
