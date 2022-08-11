@@ -18,17 +18,17 @@ public class RateService : IRateService
      }
     
 
-     public async Task<IEnumerable<Entities.Rate>> Get(CancellationToken token)
+     public async Task<IEnumerable<Entities.Rate>> Get()
      {
-         var rates = await _rateServiceExternal.Get(token);
-         await AddRangeAsync(rates, token);
+         var rates = await _rateServiceExternal.Get();
+         await AddRangeAsync(rates);
        
          return rates;
      }
 
-     public async Task AddRangeAsync(IEnumerable<Entities.Rate> rates, CancellationToken cancellationToken)
+     public async Task AddRangeAsync(IEnumerable<Entities.Rate> rates)
      {
-          await _unitOfWork.RateRepository.AddRangeAsync(rates, cancellationToken);
+          await _unitOfWork.RateRepository.AddRangeAsync(rates);
           await _unitOfWork.SaveChangesAsync();
      }
    

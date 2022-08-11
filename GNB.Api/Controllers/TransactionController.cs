@@ -25,11 +25,11 @@ public class TransactionController : ControllerBase
      [ProducesResponseType(typeof(List<TransactionDto>), StatusCodes.Status200OK)]
      [ProducesResponseType(StatusCodes.Status404NotFound)]
      [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-     public async Task<ActionResult<List<TransactionDto>>> GetTransactions(CancellationToken cancellationToken)
+     public async Task<ActionResult<List<TransactionDto>>> GetTransactions()
      {
           try
           {
-               var transactions = await _transactionService.Get(cancellationToken);
+               var transactions = await _transactionService.Get();
                if (transactions.Any()) return Ok(transactions.TransactionToDto());
                return NotFound();
           }
@@ -44,11 +44,11 @@ public class TransactionController : ControllerBase
      [ProducesResponseType(StatusCodes.Status404NotFound)]
      [ProducesResponseType(StatusCodes.Status400BadRequest)]
      [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-     public async Task<ActionResult<TransactionBySkuDto>> GeTransactionBySku([FromRoute] string sku, CancellationToken cancellationToken)
+     public async Task<ActionResult<TransactionBySkuDto>> GeTransactionBySku([FromRoute] string sku)
      {
           try
           {
-               var transactionsBySku = await _transactionBySkuService.GetTransactionBySku(sku, cancellationToken);
+               var transactionsBySku = await _transactionBySkuService.GetTransactionBySku(sku);
                if (transactionsBySku == null) return NotFound();
                if (!string.IsNullOrWhiteSpace(sku) && sku.Length == 5) return Ok(transactionsBySku);
                return BadRequest();

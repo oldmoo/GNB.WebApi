@@ -22,11 +22,11 @@ public class RateController : ControllerBase
      [ProducesResponseType(typeof(List<RateDto>),StatusCodes.Status200OK)]
      [ProducesResponseType(StatusCodes.Status404NotFound)]
      [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-     public async Task<ActionResult<List<RateDto>>> GetRates(CancellationToken cancellationToken)
+     public async Task<ActionResult<List<RateDto>>> GetRates()
      {
           try
           {
-               var rates = await _rateService.Get(cancellationToken);
+               var rates = await _rateService.Get();
                if (rates.Any()) return Ok(rates.RateToDto());
                
                return NotFound();

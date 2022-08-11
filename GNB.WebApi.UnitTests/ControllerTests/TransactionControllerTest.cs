@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using GNB.Api.Controllers;
 using GNB.Application.ApplicationServicesContracts.TransactionBySku;
@@ -55,11 +54,10 @@ public class TransactionControllerTest
      private async Task GetTransactions_ShouldReturn_OkObjectResult()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-          _transactionServiceMock.Setup(x => x.Get(token)).ReturnsAsync(_transactions);
+          _transactionServiceMock.Setup(x => x.Get()).ReturnsAsync(_transactions);
          
           // Act
-          var result = await _transactionController.GetTransactions(token);
+          var result = await _transactionController.GetTransactions();
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<List<TransactionDto>>>(result);
@@ -70,11 +68,10 @@ public class TransactionControllerTest
      private async Task GetTransactions_ShouldReturn_NotFoundObjectResult()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-          _transactionServiceMock.Setup(x => x.Get(token)).ReturnsAsync(Array.Empty<Transaction>());
+          _transactionServiceMock.Setup(x => x.Get()).ReturnsAsync(Array.Empty<Transaction>());
          
           // Act
-          var result = await _transactionController.GetTransactions(token);
+          var result = await _transactionController.GetTransactions();
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<List<TransactionDto>>>(result);
@@ -85,11 +82,10 @@ public class TransactionControllerTest
      private async Task GetTransactions_ShouldReturn_IEnumerableOfTransactionDtoAsModelType()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-          _transactionServiceMock.Setup(x => x.Get(token)).ReturnsAsync(_transactions);
+          _transactionServiceMock.Setup(x => x.Get()).ReturnsAsync(_transactions);
          
           // Act
-          var result = await _transactionController.GetTransactions(token);
+          var result = await _transactionController.GetTransactions();
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<List<TransactionDto>>>(result);
@@ -100,12 +96,11 @@ public class TransactionControllerTest
      private async Task GetTransactionBySkuInEur_ShouldReturn_OkObjectResult()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-          _transactionBySkuServiceMock.Setup(x => x.GetTransactionBySku(It.IsAny<string>(), token)).ReturnsAsync(_transactionBySkuDto);
+          _transactionBySkuServiceMock.Setup(x => x.GetTransactionBySku(It.IsAny<string>())).ReturnsAsync(_transactionBySkuDto);
 
 
           // Act
-          var result = await _transactionController.GeTransactionBySku("F1095", token);
+          var result = await _transactionController.GeTransactionBySku("F1095");
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<TransactionBySkuDto>>(result);
@@ -116,12 +111,11 @@ public class TransactionControllerTest
      private async Task GetTransactionBySkuInEur_ShouldReturn_BadRequestObjectResult()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-          _transactionBySkuServiceMock.Setup(x => x.GetTransactionBySku(It.IsAny<string>(), token)).ReturnsAsync(_transactionBySkuDto);
+          _transactionBySkuServiceMock.Setup(x => x.GetTransactionBySku(It.IsAny<string>())).ReturnsAsync(_transactionBySkuDto);
           _transactionBySkuServiceMock.Setup(x => x.SkuExists(It.IsAny<string>())).ReturnsAsync(false);
 
           // Act
-          var result = await _transactionController.GeTransactionBySku(string.Empty, token);
+          var result = await _transactionController.GeTransactionBySku(string.Empty);
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<TransactionBySkuDto>>(result);
@@ -131,11 +125,10 @@ public class TransactionControllerTest
      private async Task GetTransactionBySkuInEur_ShouldReturn_NotFoundObjectResult()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-          _transactionBySkuServiceMock.Setup(x => x.GetTransactionBySku(It.IsAny<string>(), token)).ReturnsAsync((TransactionBySkuDto?)null);
+          _transactionBySkuServiceMock.Setup(x => x.GetTransactionBySku(It.IsAny<string>())).ReturnsAsync((TransactionBySkuDto?)null);
          
           // Act
-          var result = await _transactionController.GeTransactionBySku("F1095", token);
+          var result = await _transactionController.GeTransactionBySku("F1095");
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<TransactionBySkuDto>>(result);
@@ -146,12 +139,10 @@ public class TransactionControllerTest
      private async Task GetTransactionBySkuInEur_ShouldReturn_TransactionSkuDtoAsModelType()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-         
-          _transactionBySkuServiceMock.Setup(x => x.GetTransactionBySku(It.IsAny<string>(), token)).ReturnsAsync(_transactionBySkuDto);
+          _transactionBySkuServiceMock.Setup(x => x.GetTransactionBySku(It.IsAny<string>())).ReturnsAsync(_transactionBySkuDto);
           
           // Act
-          var result = await _transactionController.GeTransactionBySku("J6456", token);
+          var result = await _transactionController.GeTransactionBySku("J6456");
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<TransactionBySkuDto>>(result);

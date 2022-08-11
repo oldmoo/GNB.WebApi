@@ -38,11 +38,10 @@ public class RateControllerTest
      private async Task GetRates_ShouldReturn_OkObjectResult()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-          _rateServiceMock.Setup(x => x.Get(token)).ReturnsAsync(_rateDto);
+          _rateServiceMock.Setup(x => x.Get()).ReturnsAsync(_rateDto);
          
           // Act
-          var result = await _rateController.GetRates(token);
+          var result = await _rateController.GetRates();
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<List<RateDto>>>(result);
@@ -53,11 +52,10 @@ public class RateControllerTest
      private async Task GetRates_ShouldReturn_NotFoundObjectResult()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-          _rateServiceMock.Setup(x => x.Get(token)).ReturnsAsync(Array.Empty<Rate>());
+          _rateServiceMock.Setup(x => x.Get()).ReturnsAsync(Array.Empty<Rate>());
          
           // Act
-          var result = await _rateController.GetRates(token);
+          var result = await _rateController.GetRates();
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<List<RateDto>>>(result);
@@ -68,11 +66,10 @@ public class RateControllerTest
      private async Task GetRates_ShouldReturn_IEnumerableOfRateDtoAsModelType()
      {
           // Arrange
-          var token = new CancellationTokenSource().Token;
-          _rateServiceMock.Setup(x => x.Get(token)).ReturnsAsync(_rateDto);
+          _rateServiceMock.Setup(x => x.Get()).ReturnsAsync(_rateDto);
          
           // Act
-          var result = await _rateController.GetRates(token);
+          var result = await _rateController.GetRates();
 
           // Assert
           var actionResult = Assert.IsType<ActionResult<List<RateDto>>>(result);

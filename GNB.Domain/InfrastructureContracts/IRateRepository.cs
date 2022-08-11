@@ -5,5 +5,5 @@ namespace GNB.Domain.InfrastructureContracts;
 
 public interface IRateRepository : IRepository<Rate>
 {
-     Task<Rate?> GetExitingRate(Expression<Func<Rate?, bool>> predicate, CancellationToken token);
+     Task<Rate?> GetExitingRate(Expression<Func<Rate?, bool>> predicate);
 }

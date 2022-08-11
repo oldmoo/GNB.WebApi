@@ -2,5 +2,5 @@
 
 public interface IRateService : IBaseService<Entities.Rate>
 {
-    Task AddRangeAsync(IEnumerable<Entities.Rate> rates, CancellationToken cancellationToken);
+    Task AddRangeAsync(IEnumerable<Entities.Rate> rates);
 }

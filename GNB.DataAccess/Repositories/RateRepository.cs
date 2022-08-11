@@ -12,8 +12,8 @@ public class RateRepository :  Repository<Rate>, IRateRepository
      {
      }
 
-     public async Task<Rate?> GetExitingRate(Expression<Func<Rate?, bool>> predicate, CancellationToken token)
+     public async Task<Rate?> GetExitingRate(Expression<Func<Rate?, bool>> predicate)
      {
-          return await Context.Rates.SingleOrDefaultAsync(predicate, token);
+          return await Context.Rates.SingleOrDefaultAsync(predicate);
      }
 }
