@@ -12,7 +12,7 @@ public class BaseService<T> : IBaseService<T> where T : class
           _service = service;
      }
 
-     public async Task<IEnumerable<T>> Get(CancellationToken token, bool fromDb = false)
+     public async Task<IEnumerable<T>> Get(CancellationToken token)
      {
           return await _service.Get(token);
      }

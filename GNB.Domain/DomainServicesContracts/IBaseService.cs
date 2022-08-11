@@ -4,5 +4,5 @@ namespace GNB.Domain.DomainServicesContracts;
 
 public interface IBaseService<T> where T : class
 {
-     Task<IEnumerable<T>> Get(CancellationToken token, bool fromDb = false);
+     Task<IEnumerable<T>> Get(CancellationToken token);
 }

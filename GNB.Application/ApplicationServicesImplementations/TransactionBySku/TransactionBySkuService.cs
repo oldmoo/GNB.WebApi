@@ -19,13 +19,13 @@ public class TransactionBySku : ITransactionBySkuService
      public async Task<TransactionBySkuDto?> GetTransactionBySku(string sku, CancellationToken token)
      {
           if (await SkuExists(sku) is not true) return default;
-          var transactions = await _unitOfWork.TransactionRepository.ListAllAsync(token);
+          var transactionsBySku = await _unitOfWork.TransactionRepository.GetTransactionsBySku(sku);
           var transactionBySku = new TransactionBySkuDto
           {
                Transactions = new List<Transaction>()
           };
 
-          foreach (var trans in transactions.Where(t => t.Sku.Equals(sku)))
+          foreach (var trans in transactionsBySku)
           {
                transactionBySku.Transactions.Add(new Transaction
                {

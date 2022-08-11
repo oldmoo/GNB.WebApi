@@ -16,12 +16,12 @@ public class TransactionService : ITransactionService
           _transactionServiceExternal.ClientName = configuration["TransactionClientName"];
      }
 
-     public async Task<IEnumerable<Entities.Transaction>> Get(CancellationToken token, bool fromDb = false)
+     public async Task<IEnumerable<Entities.Transaction>> Get(CancellationToken token)
      {
           var transactions = await _transactionServiceExternal.Get(token);
-          if (fromDb is not true) await AddRangeAsync(transactions, token);
+          await AddRangeAsync(transactions, token);
           
-          return fromDb ? await _unitOfWork.TransactionRepository.ListAllAsync(token) : transactions;
+          return transactions;
      }
 
      public async Task AddRangeAsync(IEnumerable<Entities.Transaction> rates, CancellationToken token)

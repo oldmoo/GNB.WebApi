@@ -5,12 +5,12 @@ namespace GNB.Application.Helper;
 
 public static class HelperCurrency
 {
-     private static  Dictionary<Currency, List<Currency>>? _currencyDictionary = null;
+     private static  Dictionary<Currency, List<Currency>>? _currencyDictionary;
 
  
      public static Dictionary<Currency, List<Currency>>? GetCurrencyDictionary(IEnumerable<Rate> rates)
      {
-          if (_currencyDictionary != null) return _currencyDictionary;
+          if (_currencyDictionary is not null) return _currencyDictionary;
           
           _currencyDictionary = new Dictionary<Currency, List<Currency>>();
           foreach (var rate in rates)

@@ -55,7 +55,7 @@ public class TransactionControllerTest
      {
           // Arrange
           var token = new CancellationTokenSource().Token;
-          _transactionServiceMock.Setup(x => x.Get(token, false)).ReturnsAsync(_transactions);
+          _transactionServiceMock.Setup(x => x.Get(token)).ReturnsAsync(_transactions);
          
           // Act
           var result = await _transactionController.GetTransactions(token);
@@ -70,7 +70,7 @@ public class TransactionControllerTest
      {
           // Arrange
           var token = new CancellationTokenSource().Token;
-          _transactionServiceMock.Setup(x => x.Get(token, false)).ReturnsAsync(Array.Empty<Transaction>());
+          _transactionServiceMock.Setup(x => x.Get(token)).ReturnsAsync(Array.Empty<Transaction>());
          
           // Act
           var result = await _transactionController.GetTransactions(token);
@@ -85,7 +85,7 @@ public class TransactionControllerTest
      {
           // Arrange
           var token = new CancellationTokenSource().Token;
-          _transactionServiceMock.Setup(x => x.Get(token, false)).ReturnsAsync(_transactions);
+          _transactionServiceMock.Setup(x => x.Get(token)).ReturnsAsync(_transactions);
          
           // Act
           var result = await _transactionController.GetTransactions(token);

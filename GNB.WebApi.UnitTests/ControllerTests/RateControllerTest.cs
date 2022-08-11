@@ -39,7 +39,7 @@ public class RateControllerTest
      {
           // Arrange
           var token = new CancellationTokenSource().Token;
-          _rateServiceMock.Setup(x => x.Get(token, false)).ReturnsAsync(_rateDto);
+          _rateServiceMock.Setup(x => x.Get(token)).ReturnsAsync(_rateDto);
          
           // Act
           var result = await _rateController.GetRates(token);
@@ -54,7 +54,7 @@ public class RateControllerTest
      {
           // Arrange
           var token = new CancellationTokenSource().Token;
-          _rateServiceMock.Setup(x => x.Get(token, false)).ReturnsAsync(Array.Empty<Rate>());
+          _rateServiceMock.Setup(x => x.Get(token)).ReturnsAsync(Array.Empty<Rate>());
          
           // Act
           var result = await _rateController.GetRates(token);
@@ -69,7 +69,7 @@ public class RateControllerTest
      {
           // Arrange
           var token = new CancellationTokenSource().Token;
-          _rateServiceMock.Setup(x => x.Get(token, false)).ReturnsAsync(_rateDto);
+          _rateServiceMock.Setup(x => x.Get(token)).ReturnsAsync(_rateDto);
          
           // Act
           var result = await _rateController.GetRates(token);

@@ -18,12 +18,12 @@ public class RateService : IRateService
      }
     
 
-     public async Task<IEnumerable<Entities.Rate>> Get(CancellationToken token, bool fromDb = false)
+     public async Task<IEnumerable<Entities.Rate>> Get(CancellationToken token)
      {
          var rates = await _rateServiceExternal.Get(token);
-         if (fromDb is not true) await AddRangeAsync(rates, token);
+         await AddRangeAsync(rates, token);
        
-         return fromDb ? await _unitOfWork.RateRepository.ListAllAsync(token) : rates;
+         return rates;
      }
 
      public async Task AddRangeAsync(IEnumerable<Entities.Rate> rates, CancellationToken cancellationToken)
