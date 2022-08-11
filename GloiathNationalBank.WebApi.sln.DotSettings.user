@@ -2,5 +2,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=edcbe9a2_002D10cc_002D4ad8_002D8114_002Da5c9328ff363/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetRates_ShouldReturn_OkObjectResult" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::6D683B11-96F9-4E24-82EF-12DAC1E64FB2::net6.0::GNB.WebApi.UnitTests.ControllerTests.TransactionControllerTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::6D683B11-96F9-4E24-82EF-12DAC1E64FB2::net6.0::GNB.WebApi.UnitTests.ControllerTests.RateControllerTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

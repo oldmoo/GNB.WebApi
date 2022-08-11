@@ -1,4 +1,5 @@
 ﻿using GNB.Application.Dtos;
+using GNB.Domain.common;
 using GNB.Domain.Enums;
 
 namespace GNB.Application.ApplicationServicesContracts.TransactionBySku;

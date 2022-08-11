@@ -1,8 +1,6 @@
 ﻿using GNB.Application.Dtos;
 using GNB.Application.Extensions;
-using GNB.Domain.DomainServicesContracts;
 using GNB.Domain.DomainServicesContracts.Rate;
-using GNB.Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GNB.Api.Controllers;
