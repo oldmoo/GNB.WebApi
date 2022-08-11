@@ -1,4 +1,5 @@
-﻿using GNB.Domain.Entities;
+﻿using GNB.Application.Dtos;
+using GNB.Domain.Entities;
 using GNB.Domain.Enums;
 
 namespace GNB.Application.Helper;
@@ -25,7 +26,7 @@ public static class HelperCurrency
           return _currencyDictionary;
      }
      
-     public static decimal RoundTotalAmount(IEnumerable<Transaction> transactions)
+     public static decimal RoundTotalAmount(IEnumerable<TransactionDto> transactions)
      {
           return Math.Round(transactions.Sum(t => t.Amount), 2);
      }

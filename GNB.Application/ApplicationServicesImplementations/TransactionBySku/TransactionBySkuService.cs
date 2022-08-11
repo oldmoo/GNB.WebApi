@@ -1,5 +1,6 @@
 ﻿using GNB.Application.ApplicationServicesContracts.TransactionBySku;
 using GNB.Application.Dtos;
+using GNB.Application.Extensions;
 using GNB.Application.Helper;
 using GNB.Domain.Enums;
 using GNB.Domain.InfrastructureContracts;
@@ -20,22 +21,22 @@ public class TransactionBySku : ITransactionBySkuService
      {
           if (await SkuExists(sku) is not true) return default;
           var transactionsBySku = await _unitOfWork.TransactionRepository.GetTransactionsBySku(sku);
-          var transactionBySku = new TransactionBySkuDto
+          var transactionBySkuDto = new TransactionBySkuDto
           {
-               Transactions = new List<Transaction>()
+               Transactions = new List<TransactionDto>()
           };
 
           foreach (var trans in transactionsBySku)
           {
-               transactionBySku.Transactions.Add(new Transaction
+               transactionBySkuDto.Transactions.Add(new TransactionDto()
                {
                    Amount = await RoundAmount(trans.Currency, trans.Amount, token),
                    Currency = Currency.Eur,
                    Sku = trans.Sku
                });
-               transactionBySku.TotalAmount = HelperCurrency.RoundTotalAmount(transactionBySku.Transactions);
+               transactionBySkuDto.TotalAmount = HelperCurrency.RoundTotalAmount(transactionBySkuDto.Transactions);
           }
-          return transactionBySku;
+          return transactionBySkuDto;
      }
 
      public async Task<decimal> GetAmountByCurrency(Currency currency, Currency currencyInEur, decimal amount, CancellationToken token)

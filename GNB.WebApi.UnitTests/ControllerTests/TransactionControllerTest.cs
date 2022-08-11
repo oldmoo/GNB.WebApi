@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GNB.Api.Controllers;
 using GNB.Application.ApplicationServicesContracts.TransactionBySku;
 using GNB.Application.Dtos;
+using GNB.Application.Extensions;
 using GNB.Domain.DomainServicesContracts.Transaction;
 using GNB.Domain.Entities;
 using GNB.Domain.Enums;
@@ -45,7 +46,7 @@ public class TransactionControllerTest
           _transactionBySkuDto = new TransactionBySkuDto
           {
                TotalAmount = transactions.Sum(t => t.Amount),
-               Transactions = transactions
+               Transactions = transactions.TransactionToDto().ToList()
                
           };
      }
