@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kUIDdgDTU1SM/xpZW5G5OjJnGP1vidStrio2BaUNRTO9ql03cDXEbPipj5sfshBaAIbPhAJZb3k3oLE300bQyw==",
+  "dgSpecHash": "bZ0XA/rmGwJp7gNd5OW+X2/aQHlkhJOzzFA2YFj7lLFGwPGWJ40H0ZFaEEnDkEqnjA/HZwMiA5IMGl8WMylqmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pape\\RiderProjects\\GloiathNationalBank.WebApi\\GNB.DataAccess\\GNB.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\Pape\\RiderProjects\\GloiathNationalBank.WebApi\\GNB.Persistence\\GNB.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pape\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

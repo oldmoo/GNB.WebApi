@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "qA8UBWenNT07jSVo6haNkGcMgyoGR6ae42hveV3mNY8TPGYH8nc56/VSgUhSmqshMf9igoLsdJDmqvzdvl+ttw==",
+  "dgSpecHash": "vxbemY5Nq4OW4z+yiDIla+SsSI5lTJyqfIEDbduJ+f9x3kknzYkUwn5TKTj1gi0/8J45NsMvqsPEhzj5RHab0A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Pape\\RiderProjects\\GloiathNationalBank.WebApi\\GNB.WebApi.UnitTests\\GNB.WebApi.UnitTests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Pape\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\Pape\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",
-    "C:\\Users\\Pape\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Pape\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",

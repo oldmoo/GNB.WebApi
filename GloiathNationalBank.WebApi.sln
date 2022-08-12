@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNB.Domain", "GNB.Domain\GN
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Infrastructure", "5. Infrastructure", "{64F2C6DD-DD2D-4FDF-AE91-07E30F8B00B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNB.DataAccess", "GNB.DataAccess\GNB.DataAccess.csproj", "{8B2F7302-8C86-486D-BE4D-75A496056742}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNB.Persistence", "GNB.Persistence\GNB.Persistence.csproj", "{8B2F7302-8C86-486D-BE4D-75A496056742}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNB.Api", "GNB.Api\GNB.Api.csproj", "{508DCF2A-669D-448F-A53B-45D039F1CE5C}"
 EndProject

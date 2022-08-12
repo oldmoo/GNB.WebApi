@@ -33,22 +33,16 @@ public class RateDomainServiceTest
               new() { From = Currency.Eur, To = Currency.Cad, Value = 1.38m},
               new() { From = Currency.Cad, To = Currency.Eur, Value = 0.72m},
          };
+         
+         ConfigureMocks();
      }
-
+     
      [Fact]
      public async void GetRate_Should_Return_List_Of_Rate_Dto()
      {
           // Arrange
           SetUpPropertyRateService(_rateServiceMock.Object);
-          _configurationMock.Setup(x => x["HttpClient:Rate"]).Returns("RateService");
-         
-          _rateServiceMock.Setup(x => x.Get()).ReturnsAsync(_rates);
-          _rateServiceMock.Setup(x => x.ClientName);
-         
-          _unitOfWorkMock.Setup(x => x.RateRepository.AddRangeAsync(_rates)).Returns(Task.CompletedTask);
-         _unitOfWorkMock.Setup(x => x.SaveChangesAsync()).ReturnsAsync(It.IsAny<int>());
-         
-         var rateService = CreateRateService();
+          var rateService = CreateRateService();
          
          // Act
          var result = await rateService.Get();
@@ -66,5 +60,16 @@ public class RateDomainServiceTest
      private IRateDomainService CreateRateService()
      {
           return new RateDomainDomainService(_rateServiceMock.Object, _unitOfWorkMock.Object, _configurationMock.Object);
+     }
+     
+     private void ConfigureMocks()
+     {
+          _configurationMock.Setup(x => x["HttpClient:Rate"]).Returns("RateService");
+         
+          _rateServiceMock.Setup(x => x.Get()).ReturnsAsync(_rates);
+          _rateServiceMock.Setup(x => x.ClientName);
+         
+          _unitOfWorkMock.Setup(x => x.RateRepository.AddRangeAsync(_rates)).Returns(Task.CompletedTask);
+          _unitOfWorkMock.Setup(x => x.SaveChangesAsync()).ReturnsAsync(It.IsAny<int>());
      }
 }

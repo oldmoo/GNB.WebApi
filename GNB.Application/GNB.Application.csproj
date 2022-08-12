@@ -7,11 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GNB.DataAccess\GNB.DataAccess.csproj" />
+      <ProjectReference Include="..\GNB.Persistence\GNB.Persistence.csproj" />
       <ProjectReference Include="..\GNB.Domain\GNB.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
 

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "xAsFupEg5HRxH58BagsRS68a8+FDdV86/eCvtx1zOF54d/12LxdOUhvThWHuG0/4OmZt3CMmCrTrz7CyWYDoCg==",
+  "dgSpecHash": "N/Fj7weBmYUHp5jk7CpaqvzhvcbEfqT9RR6o+UGg0SyWp/iONm+qgHVYxUYWYVY+CcH2MMjOiqAlTMctfu9Yyw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Pape\\RiderProjects\\GloiathNationalBank.WebApi\\GNB.Api\\GNB.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Pape\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\Pape\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\Pape\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Pape\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Pape\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
