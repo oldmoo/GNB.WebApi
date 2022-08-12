@@ -1,0 +1,17 @@
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\bin\Debug\net6.0\GNB.Persistence.deps.json
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\bin\Debug\net6.0\GNB.Persistence.runtimeconfig.json
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\bin\Debug\net6.0\GNB.Persistence.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\bin\Debug\net6.0\GNB.Persistence.pdb
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\bin\Debug\net6.0\GNB.Domain.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\bin\Debug\net6.0\GNB.Domain.pdb
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\GNB.Persistence.csproj.AssemblyReference.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\GNB.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\GNB.Persistence.AssemblyInfoInputs.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\GNB.Persistence.AssemblyInfo.cs
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\GNB.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\GNB.Persistence.csproj.CopyComplete
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\GNB.Persistence.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\refint\GNB.Persistence.dll
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\GNB.Persistence.pdb
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\GNB.Persistence.genruntimeconfig.cache
+C:\Users\Pape\RiderProjects\GloiathNationalBank.WebApi\GNB.Persistence\obj\Debug\net6.0\ref\GNB.Persistence.dll

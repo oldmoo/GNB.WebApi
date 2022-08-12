@@ -1,6 +1,4 @@
 ﻿using GNB.Domain.InfrastructureContracts;
-using GNB.Infrastructure.Models;
-using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 namespace GNB.Infrastructure.Services;

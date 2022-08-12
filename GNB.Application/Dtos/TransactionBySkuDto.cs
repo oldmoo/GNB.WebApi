@@ -1,7 +1,4 @@
-﻿using GNB.Infrastructure.Models;
-using Transaction = GNB.Domain.Entities.Transaction;
-
-namespace GNB.Application.Dtos;
+﻿namespace GNB.Application.Dtos;
 
 public class TransactionBySkuDto
 {

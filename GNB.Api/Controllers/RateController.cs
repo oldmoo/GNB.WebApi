@@ -1,7 +1,5 @@
 ﻿using GNB.Application.ApplicationServicesContracts.Rate;
 using GNB.Application.Dtos;
-using GNB.Application.Extensions;
-using GNB.Domain.DomainServicesContracts.Rate;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GNB.Api.Controllers;
@@ -24,8 +22,9 @@ public class RateController : ControllerBase
      {
           try
           {
+               
                var rates = await _rateAppService.Get();
-               if (rates.Any()) return Ok(rates.RateToDto());
+               if (rates.Any()) return Ok(rates);
                
                return NotFound();
           }

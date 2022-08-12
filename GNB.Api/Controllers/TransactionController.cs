@@ -1,8 +1,6 @@
 ﻿using GNB.Application.ApplicationServicesContracts.Transaction;
 using GNB.Application.ApplicationServicesContracts.TransactionBySku;
 using GNB.Application.Dtos;
-using GNB.Application.Extensions;
-using GNB.Domain.DomainServicesContracts.Transaction;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GNB.Api.Controllers;
@@ -31,7 +29,7 @@ public class TransactionController : ControllerBase
           try
           {
                var transactions = await _transactionAppService.Get();
-               if (transactions.Any()) return Ok(transactions.TransactionToDto());
+               if (transactions.Any()) return Ok(transactions);
                return NotFound();
           }
           catch (Exception ex)

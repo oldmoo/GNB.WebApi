@@ -1,7 +1,8 @@
-﻿using GNB.Application.ApplicationServicesContracts.TransactionBySku;
+﻿using AutoMapper;
+using GNB.Application.ApplicationServicesContracts.TransactionBySku;
 using GNB.Application.Dtos;
-using GNB.Application.Extensions;
 using GNB.Domain.DomainServicesContracts.Rate;
+using GNB.Domain.Entities;
 using GNB.Domain.Enums;
 using GNB.Domain.Helper;
 using GNB.Domain.InfrastructureContracts;
@@ -12,10 +13,12 @@ public class TransactionAppBySkuService : ITransactionAppBySkuService
 {
      private readonly IUnitOfWork _unitOfWork;
      private readonly IRateDomainService _rateDomainService;
-     public TransactionAppBySkuService(IUnitOfWork unitOfWork, IRateDomainService rateDomainService)
+     private readonly IMapper _mapper;
+     public TransactionAppBySkuService(IUnitOfWork unitOfWork, IRateDomainService rateDomainService, IMapper mapper)
      {
           _unitOfWork = unitOfWork;
           _rateDomainService = rateDomainService;
+          _mapper = mapper;
      }
 
      public async Task<TransactionBySkuDto?> GetTransactionBySku(string sku)
@@ -27,7 +30,8 @@ public class TransactionAppBySkuService : ITransactionAppBySkuService
           {
                Transactions = new List<TransactionDto>()
           };
-
+          var transactions = _mapper.Map<List<Transaction>>(transactionBySkuDto.Transactions);
+          
           foreach (var trans in transactionsBySku)
           {
                transactionBySkuDto.Transactions.Add(new TransactionDto()
@@ -36,7 +40,7 @@ public class TransactionAppBySkuService : ITransactionAppBySkuService
                    Currency = Currency.Eur,
                    Sku = trans.Sku
                });
-               transactionBySkuDto.TotalAmount = HelperCurrency.RoundTotalAmount(transactionBySkuDto.Transactions.TransactionToEntity());
+               transactionBySkuDto.TotalAmount = HelperCurrency.RoundTotalAmount(transactions);
           }
           return transactionBySkuDto;
      }
