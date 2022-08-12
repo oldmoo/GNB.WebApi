@@ -19,7 +19,7 @@ namespace GNB.Infrastructure;
 [ExcludeFromCodeCoverage]
 public static class DependencyInjection
 {
-     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+     public static IServiceCollection AddServicesInfrastructure(this IServiceCollection services)
      {
           var configuration = services.BuildServiceProvider().GetService<IConfiguration>();
           
@@ -30,8 +30,8 @@ public static class DependencyInjection
           _ = services.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork));
           _ = services.AddScoped(typeof(IRateRepository), typeof(RateRepository));
           _ = services.AddScoped(typeof(ITransactionRepository), typeof(TransactionRepository));
-          _ = services.AddScoped(typeof(IRateService), typeof(RateService));
-          _ = services.AddScoped(typeof(ITransactionService), typeof(TransactionService));
+          _ = services.AddScoped(typeof(IRateDomainService), typeof(RateDomainDomainService));
+          _ = services.AddScoped(typeof(ITransactionDomainService), typeof(TransactionDomainService));
           
           return services;
      }

@@ -1,4 +1,5 @@
-﻿using GNB.Application.Dtos;
+﻿using GNB.Application.ApplicationServicesContracts.Rate;
+using GNB.Application.Dtos;
 using GNB.Application.Extensions;
 using GNB.Domain.DomainServicesContracts.Rate;
 using Microsoft.AspNetCore.Mvc;
@@ -9,11 +10,10 @@ namespace GNB.Api.Controllers;
 [Route("api/rates")]
 public class RateController : ControllerBase
 {
-     private readonly IRateService _rateService;
-
-     public RateController(IRateService rateService)
+     private readonly IRateAppService _rateAppService;
+     public RateController(IRateAppService rateAppService)
      {
-          _rateService = rateService;
+          _rateAppService = rateAppService;
      }
      
      [HttpGet(Name = "Get list of rates")]
@@ -24,7 +24,7 @@ public class RateController : ControllerBase
      {
           try
           {
-               var rates = await _rateService.Get();
+               var rates = await _rateAppService.Get();
                if (rates.Any()) return Ok(rates.RateToDto());
                
                return NotFound();

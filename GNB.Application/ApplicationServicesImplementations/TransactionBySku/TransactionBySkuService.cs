@@ -1,24 +1,27 @@
 ﻿using GNB.Application.ApplicationServicesContracts.TransactionBySku;
 using GNB.Application.Dtos;
-using GNB.Application.Helper;
-using GNB.Domain.common;
+using GNB.Application.Extensions;
+using GNB.Domain.DomainServicesContracts.Rate;
 using GNB.Domain.Enums;
+using GNB.Domain.Helper;
 using GNB.Domain.InfrastructureContracts;
 
 namespace GNB.Application.ApplicationServicesImplementations.TransactionBySku;
 
-public class TransactionBySku : ITransactionBySkuService
+public class TransactionAppBySkuService : ITransactionAppBySkuService
 {
      private readonly IUnitOfWork _unitOfWork;
-     
-     public TransactionBySku(IUnitOfWork unitOfWork)
+     private readonly IRateDomainService _rateDomainService;
+     public TransactionAppBySkuService(IUnitOfWork unitOfWork, IRateDomainService rateDomainService)
      {
           _unitOfWork = unitOfWork;
+          _rateDomainService = rateDomainService;
      }
 
      public async Task<TransactionBySkuDto?> GetTransactionBySku(string sku)
      {
-          if (await SkuExists(sku) is not true) return default;
+          var skuExists =  await _unitOfWork.TransactionRepository.ExistAsync(t => t.Sku.Equals(sku));
+          if (skuExists  is not true) return default;
           var transactionsBySku = await _unitOfWork.TransactionRepository.GetTransactionsBySku(sku);
           var transactionBySkuDto = new TransactionBySkuDto
           {
@@ -33,50 +36,16 @@ public class TransactionBySku : ITransactionBySkuService
                    Currency = Currency.Eur,
                    Sku = trans.Sku
                });
-               transactionBySkuDto.TotalAmount = HelperCurrency.RoundTotalAmount(transactionBySkuDto.Transactions);
+               transactionBySkuDto.TotalAmount = HelperCurrency.RoundTotalAmount(transactionBySkuDto.Transactions.TransactionToEntity());
           }
           return transactionBySkuDto;
      }
 
      public async Task<decimal> GetAmountByCurrency(Currency currency, Currency currencyInEur, decimal amount)
      {
-          return amount * await Rate(currency, currencyInEur);
+          return amount * await _rateDomainService.GetRateByCurrency(currency, currencyInEur);
      }
-     
-     public async Task<bool> SkuExists(string sku)
-     {
-          return await _unitOfWork.TransactionRepository.ExistAsync(t => t.Sku.Equals(sku));
-     }
-     
-     public async Task<decimal> GetExistingRate(Currency from, Currency to)
-     {
-          var rate = await _unitOfWork.RateRepository.GetExitingRate(r => r != null && r.From == from && r.To == to);
-          var rateInverse = await _unitOfWork.RateRepository.GetExitingRate(r => r != null && r.From == to && r.To == from);
-         
-          var rateValue = rate?.Value ?? 1 / rateInverse!.Value;
-          return rateValue;
-     }
-     public async Task<decimal> Rate(Currency from, Currency to)
-     {
-          var currDictionary =
-               HelperCurrency.GetCurrencyDictionary(await _unitOfWork.RateRepository.ListAllAsync());
-          
-          if (currDictionary is not null && currDictionary[from].Contains(to))
-          {
-               return await GetExistingRate(from, to);
-          }
 
-          foreach (var code in currDictionary?[from]!)
-          {
-               var rate = await Rate(code, to);
-               if (rate != 0)
-               {
-                    return rate * await GetExistingRate(from, code);
-               }
-          }
-          return 0;
-     }
-   
      private async Task<decimal> RoundAmount(Currency currency, decimal amount)
      {
           return Math.Round((currency != Currency.Eur ? await GetAmountByCurrency(currency, Currency.Eur, amount) : amount), 2);

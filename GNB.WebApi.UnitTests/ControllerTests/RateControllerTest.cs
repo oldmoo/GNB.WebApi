@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 using GNB.Api.Controllers;
+using GNB.Application.ApplicationServicesContracts.Rate;
 using GNB.Application.Dtos;
-using GNB.Domain.DomainServicesContracts.Rate;
 using GNB.Domain.Entities;
 using GNB.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
@@ -15,15 +14,15 @@ namespace GNB.WebApi.UnitTests.ControllerTests;
 
 public class RateControllerTest
 {
-     private readonly Mock<IRateService> _rateServiceMock;
+     private readonly Mock<IRateAppService> _rateServiceMock;
      private readonly RateController _rateController;
-     private readonly List<Rate>  _rateDto;
+     private readonly List<Rate>  _rates;
 
      public RateControllerTest()
      {
-          _rateServiceMock = new Mock<IRateService>(MockBehavior.Strict);
+          _rateServiceMock = new Mock<IRateAppService>(MockBehavior.Strict);
           _rateController = new RateController(_rateServiceMock.Object);
-          _rateDto = new List<Rate>
+          _rates = new List<Rate>
           {
                new() { From = Currency.Usd, To = Currency.Eur, Value = 1.1m},
                new() { From = Currency.Eur, To = Currency.Usd, Value = 0.91m},
@@ -38,7 +37,7 @@ public class RateControllerTest
      private async Task GetRates_ShouldReturn_OkObjectResult()
      {
           // Arrange
-          _rateServiceMock.Setup(x => x.Get()).ReturnsAsync(_rateDto);
+          _rateServiceMock.Setup(x => x.Get()).ReturnsAsync(_rates);
          
           // Act
           var result = await _rateController.GetRates();
@@ -66,7 +65,7 @@ public class RateControllerTest
      private async Task GetRates_ShouldReturn_IEnumerableOfRateDtoAsModelType()
      {
           // Arrange
-          _rateServiceMock.Setup(x => x.Get()).ReturnsAsync(_rateDto);
+          _rateServiceMock.Setup(x => x.Get()).ReturnsAsync(_rates);
          
           // Act
           var result = await _rateController.GetRates();

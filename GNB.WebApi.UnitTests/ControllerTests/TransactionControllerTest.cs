@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GNB.Api.Controllers;
+using GNB.Application.ApplicationServicesContracts.Transaction;
 using GNB.Application.ApplicationServicesContracts.TransactionBySku;
 using GNB.Application.Dtos;
 using GNB.Application.Extensions;
@@ -17,16 +18,16 @@ namespace GNB.WebApi.UnitTests.ControllerTests;
 
 public class TransactionControllerTest
 {
-     private readonly Mock<ITransactionBySkuService> _transactionBySkuServiceMock;
-     private readonly Mock<ITransactionService> _transactionServiceMock;
+     private readonly Mock<ITransactionAppBySkuService> _transactionBySkuServiceMock;
+     private readonly Mock<ITransactionAppService> _transactionServiceMock;
      private readonly TransactionController _transactionController;
      private readonly List<Transaction> _transactions;
      private readonly TransactionBySkuDto _transactionBySkuDto;
      public TransactionControllerTest()
      {
-          _transactionBySkuServiceMock = new Mock<ITransactionBySkuService>(MockBehavior.Strict);
-          _transactionServiceMock = new Mock<ITransactionService>(MockBehavior.Strict);
-          _transactionController = new TransactionController(_transactionServiceMock.Object, _transactionBySkuServiceMock.Object);
+          _transactionBySkuServiceMock = new Mock<ITransactionAppBySkuService>(MockBehavior.Strict);
+          _transactionServiceMock = new Mock<ITransactionAppService>(MockBehavior.Strict);
+          _transactionController = new TransactionController(_transactionBySkuServiceMock.Object, _transactionServiceMock.Object);
           _transactions = new List<Transaction>
           {
                new() { Sku = "F1095", Amount = 20.7m, Currency = Currency.Cad },
@@ -112,7 +113,6 @@ public class TransactionControllerTest
      {
           // Arrange
           _transactionBySkuServiceMock.Setup(x => x.GetTransactionBySku(It.IsAny<string>())).ReturnsAsync(_transactionBySkuDto);
-          _transactionBySkuServiceMock.Setup(x => x.SkuExists(It.IsAny<string>())).ReturnsAsync(false);
 
           // Act
           var result = await _transactionController.GeTransactionBySku(string.Empty);

@@ -1,4 +1,5 @@
-﻿using GNB.Application.ApplicationServicesContracts.TransactionBySku;
+﻿using GNB.Application.ApplicationServicesContracts.Transaction;
+using GNB.Application.ApplicationServicesContracts.TransactionBySku;
 using GNB.Application.Dtos;
 using GNB.Application.Extensions;
 using GNB.Domain.DomainServicesContracts.Transaction;
@@ -12,13 +13,13 @@ namespace GNB.Api.Controllers;
 
 public class TransactionController : ControllerBase
 {
-     private readonly ITransactionService _transactionService;
-     private readonly ITransactionBySkuService _transactionBySkuService;
+     private readonly ITransactionAppService _transactionAppService;
+     private readonly ITransactionAppBySkuService _transactionAppBySkuService;
      
-     public TransactionController(ITransactionService transactionService, ITransactionBySkuService transactionBySkuService)
+     public TransactionController(ITransactionAppBySkuService transactionAppBySkuService, ITransactionAppService transactionAppService)
      {
-          _transactionService = transactionService;
-          _transactionBySkuService = transactionBySkuService;
+          _transactionAppBySkuService = transactionAppBySkuService;
+          _transactionAppService = transactionAppService;
      }
 
      [HttpGet(Name = "Get list of transactions")]
@@ -29,7 +30,7 @@ public class TransactionController : ControllerBase
      {
           try
           {
-               var transactions = await _transactionService.Get();
+               var transactions = await _transactionAppService.Get();
                if (transactions.Any()) return Ok(transactions.TransactionToDto());
                return NotFound();
           }
@@ -48,7 +49,7 @@ public class TransactionController : ControllerBase
      {
           try
           {
-               var transactionsBySku = await _transactionBySkuService.GetTransactionBySku(sku);
+               var transactionsBySku = await _transactionAppBySkuService.GetTransactionBySku(sku);
                if (transactionsBySku == null) return NotFound();
                if (!string.IsNullOrWhiteSpace(sku) && sku.Length == 5) return Ok(transactionsBySku);
                return BadRequest();

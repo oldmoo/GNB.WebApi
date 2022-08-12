@@ -3,5 +3,9 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::6D683B11-96F9-4E24-82EF-12DAC1E64FB2::net6.0::GNB.WebApi.UnitTests.ControllerTests.TransactionControllerTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::6D683B11-96F9-4E24-82EF-12DAC1E64FB2::net6.0::GNB.WebApi.UnitTests.ControllerTests.RateControllerTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AF1BD2B2-3A74-4373-9B2A-F8D2EC7F6AC6::net6.0::GNB.Domain.UnitTests.Rate.RateServiceTest.GetRate_Should_Return_List_Of_Rate_Dto&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AF1BD2B2-3A74-4373-9B2A-F8D2EC7F6AC6::net6.0::GNB.Domain.UnitTests.Transaction.TransactionServiceTest.GetRate_Should_Return_List_Of_Rate_Dto&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AF1BD2B2-3A74-4373-9B2A-F8D2EC7F6AC6::net6.0::GNB.Domain.UnitTests.Rate.RateDomainServiceTest.GetRate_Should_Return_List_Of_Rate_Dto&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AF1BD2B2-3A74-4373-9B2A-F8D2EC7F6AC6::net6.0::GNB.Domain.UnitTests.Transaction.TransactionDomainServiceTest.GetRate_Should_Return_List_Of_Rate_Dto&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

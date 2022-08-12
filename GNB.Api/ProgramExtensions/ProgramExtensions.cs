@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
-using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using GNB.Application;
 using GNB.Application.ApplicationServicesContracts.TransactionBySku;
 using GNB.Application.ApplicationServicesImplementations.TransactionBySku;
 using GNB.Infrastructure;
@@ -54,9 +54,10 @@ public static class ProgramExtensions
           
           #region Add Services to the container
 
-          builder.Services.AddScoped(typeof(ITransactionBySkuService), typeof(TransactionBySku));
+          builder.Services.AddScoped(typeof(ITransactionAppBySkuService), typeof(TransactionAppBySkuService));
                _ = builder.Services.AddControllers();
-               _ = builder.Services.AddInfrastructure();
+               _ = builder.Services.AddServicesInfrastructure();
+               _ = builder.Services.AddServicesApplication();
           
           #endregion
 
@@ -64,16 +65,13 @@ public static class ProgramExtensions
           
                _ = builder.Host.ConfigureServices((context, services) =>
                {
-                    var baseUrl = context.Configuration["BaseUrl"];
-                    var rateClientName = context.Configuration["RateClientName"];
-                    var transactionClientName = context.Configuration["TransactionClientName"];
-                    services.AddHttpClient(rateClientName, client =>
+                    services.AddHttpClient(context.Configuration["HttpClient:Rate"], client =>
                     {
-                         client.BaseAddress = new Uri($"{baseUrl}/rates.json");
+                         client.BaseAddress = new Uri($"{context.Configuration["HttpClient:BaseAddress"]}/rates.json");
                     });
-                    services.AddHttpClient(transactionClientName, client =>
+                    services.AddHttpClient(context.Configuration["HttpClient:Transaction"], client =>
                     {
-                         client.BaseAddress = new Uri($"{baseUrl}/transactions.json");
+                         client.BaseAddress = new Uri($"{context.Configuration["HttpClient:BaseAddress"]}/transactions.json");
                     });
                });
           
