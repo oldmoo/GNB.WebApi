@@ -27,7 +27,7 @@ public static class DependencyInjection
           _ = services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
           _ = services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
           _ = services.AddScoped(typeof(IService<>), typeof(Service<>));
-          _ = services.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork));
+          _ = services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
           _ = services.AddScoped(typeof(IRateRepository), typeof(RateRepository));
           _ = services.AddScoped(typeof(ITransactionRepository), typeof(TransactionRepository));
           _ = services.AddScoped(typeof(IRateDomainService), typeof(RateDomainService));

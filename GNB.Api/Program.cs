@@ -1,5 +1,4 @@
 using GNB.Api.ProgramExtensions;
-using GNB.Infrastructure;
 
 var builder = WebApplication
      .CreateBuilder(args)
