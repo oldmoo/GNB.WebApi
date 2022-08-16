@@ -30,7 +30,7 @@ public static class DependencyInjection
           _ = services.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork));
           _ = services.AddScoped(typeof(IRateRepository), typeof(RateRepository));
           _ = services.AddScoped(typeof(ITransactionRepository), typeof(TransactionRepository));
-          _ = services.AddScoped(typeof(IRateDomainService), typeof(RateDomainDomainService));
+          _ = services.AddScoped(typeof(IRateDomainService), typeof(RateDomainService));
           _ = services.AddScoped(typeof(ITransactionDomainService), typeof(TransactionDomainService));
           
           return services;

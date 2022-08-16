@@ -59,7 +59,7 @@ public class RateDomainServiceTest
      }
      private IRateDomainService CreateRateService()
      {
-          return new RateDomainDomainService(_rateServiceMock.Object, _unitOfWorkMock.Object, _configurationMock.Object);
+          return new RateDomainService(_rateServiceMock.Object, _unitOfWorkMock.Object, _configurationMock.Object);
      }
      
      private void ConfigureMocks()

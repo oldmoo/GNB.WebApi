@@ -6,12 +6,12 @@ using Microsoft.Extensions.Configuration;
 
 namespace GNB.Domain.DomainServicesImplementations.Rate;
 
-public class RateDomainDomainService : IRateDomainService
+public class RateDomainService : IRateDomainService
 {
      private readonly IService<Entities.Rate> _rateServiceExternal;
      private readonly IUnitOfWork _unitOfWork;
 
-     public RateDomainDomainService(IService<Entities.Rate> rateServiceExternal, IUnitOfWork unitOfWork, IConfiguration configuration)
+     public RateDomainService(IService<Entities.Rate> rateServiceExternal, IUnitOfWork unitOfWork, IConfiguration configuration)
      {
           _rateServiceExternal = rateServiceExternal;
           _unitOfWork = unitOfWork;
