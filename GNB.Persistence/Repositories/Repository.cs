@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using GNB.Domain.Entities;
 using GNB.Domain.InfrastructureContracts;
-using GNB.Infrastructure.Contexts;
+using GNB.Infrastructure.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace GNB.Infrastructure.Repositories;

@@ -2,7 +2,7 @@
 using GNB.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace GNB.Infrastructure.Contexts;
+namespace GNB.Infrastructure.DbContexts;
 
 public class AppDbContext : DbContext
 {
@@ -11,7 +11,7 @@ public class AppDbContext : DbContext
           
      }
      
-     public DbSet<Rate?> Rates { get; set; } = null!;
+     public DbSet<Rate> Rates { get; set; } = null!;
      public DbSet<Transaction> Transactions { get; set; } = null!;
 
      protected override void OnModelCreating(ModelBuilder modelBuilder)

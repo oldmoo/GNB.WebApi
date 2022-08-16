@@ -6,7 +6,7 @@ using GNB.Domain.DomainServicesImplementations;
 using GNB.Domain.DomainServicesImplementations.Rate;
 using GNB.Domain.DomainServicesImplementations.Transaction;
 using GNB.Domain.InfrastructureContracts;
-using GNB.Infrastructure.Contexts;
+using GNB.Infrastructure.DbContexts;
 using GNB.Infrastructure.Repositories;
 using GNB.Infrastructure.Services;
 using GNB.Infrastructure.UnitOfWorks;

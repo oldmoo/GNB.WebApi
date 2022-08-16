@@ -1,5 +1,5 @@
 ﻿using GNB.Domain.InfrastructureContracts;
-using GNB.Infrastructure.Contexts;
+using GNB.Infrastructure.DbContexts;
 
 namespace GNB.Infrastructure.UnitOfWorks;
 
